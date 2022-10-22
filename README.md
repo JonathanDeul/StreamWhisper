@@ -17,6 +17,30 @@ High-performance inference of [OpenAI's Whisper](https://github.com/openai/whisp
 
 ## Usage
 
+# Live speech to text deutsch
+
+```java
+./stream -m ./models/base.bin -t 8 --step 500 --length 5000
+```
+(läuft nahezu verzögerungsfrei auf M1 Mac)
+
+```java
+./stream -m ./models/medium.bin -t 10 --step 200 --length 8000
+```
+
+The `stream` tool depends on SDL2 library to capture audio from the microphone. You can build it like this:
+
+```bash
+# Install SDL2 on Linux
+sudo apt-get install libsdl2-dev
+
+# Install SDL2 on Mac OS
+brew install sdl2
+
+make stream
+```
+
+
 To build the main program, run `make`. You can then transcribe a `.wav` file like this:
 
 ```bash
